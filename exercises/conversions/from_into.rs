@@ -39,6 +39,20 @@ impl Default for Person {
 
 impl From<&str> for Person {
     fn from(s: &str) -> Person {
+        if s.len() == 0 {
+            return Person::default();
+        } else {
+            let a = s.split(",");
+            let name = a[0];
+            if name.len() == 0 {
+                return Person::default();
+            }
+            if let age = a[0].usize() {
+                return Person { name, age };
+            }
+
+            return Person::default();
+        }
     }
 }
 
