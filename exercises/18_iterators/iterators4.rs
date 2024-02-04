@@ -15,6 +15,13 @@ pub fn factorial(num: u64) -> u64 {
     // For an extra challenge, don't use:
     // - recursion
     // Execute `rustlings hint iterators4` for hints.
+    // let sum = a.iter().fold(0, |acc, x| acc + x);
+
+    // iterate from 1 to number
+    // multiply num by itself
+    // return the final value
+    // e.g. if num = 3, then 3*3*3
+    (1..=num).fold(1, |acc, n| acc * n)
 }
 
 #[cfg(test)]
